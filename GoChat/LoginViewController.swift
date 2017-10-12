@@ -7,13 +7,23 @@
 //
 
 import UIKit
-
+import FirebaseAuth
 class LoginViewController: UIViewController {
 
     @IBAction func LoginAnonymouslyDidTapped(_ sender: Any) {
         print("login anonymously did tapped")
         //anonymously log users in.
         //switch view by setting navigation controller as root view controller
+        
+        //enable anonymous auth in Sign-in providers section in firebase project
+        Auth.auth().signInAnonymously { (anonymousUser: User?, error: Error?) in
+            if error == nil {
+                print("UserId: \(anonymousUser!.uid)")
+            } else {
+                print(error!.localizedDescription)
+                return
+            }
+        }
         
         //Create a main storyboard instance
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
