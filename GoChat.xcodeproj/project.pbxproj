@@ -12,6 +12,7 @@
 		E104D6D91F607B3300D64C53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E104D6D71F607B3300D64C53 /* Main.storyboard */; };
 		E104D6DB1F607B3300D64C53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E104D6DA1F607B3300D64C53 /* Assets.xcassets */; };
 		E104D6DE1F607B3300D64C53 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E104D6DC1F607B3300D64C53 /* LaunchScreen.storyboard */; };
+		E12489971F92260E0064689E /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12489961F92260E0064689E /* Helper.swift */; };
 		E13C7EF21F8D36E700C69436 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13C7EF11F8D36E700C69436 /* LoginViewController.swift */; };
 		E13C7EF41F8D372200C69436 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13C7EF31F8D372200C69436 /* ChatViewController.swift */; };
 		E13C7F031F8E306000C69436 /* backgroundPhoto.png in Resources */ = {isa = PBXBuildFile; fileRef = E13C7F021F8E302800C69436 /* backgroundPhoto.png */; };
@@ -33,6 +34,7 @@
 		E104D6DD1F607B3300D64C53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E104D6DF1F607B3300D64C53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E10B65741F8EA2DD00CB9041 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E12489961F92260E0064689E /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		E13C7EF11F8D36E700C69436 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E13C7EF31F8D372200C69436 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		E13C7F021F8E302800C69436 /* backgroundPhoto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundPhoto.png; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 			children = (
 				E104D6D31F607B3300D64C53 /* AppDelegate.swift */,
 				E13C7EF11F8D36E700C69436 /* LoginViewController.swift */,
+				E12489961F92260E0064689E /* Helper.swift */,
 				E13C7EF31F8D372200C69436 /* ChatViewController.swift */,
 				E104D6D71F607B3300D64C53 /* Main.storyboard */,
 				E104D6DA1F607B3300D64C53 /* Assets.xcassets */,
@@ -221,11 +224,13 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-GoChat/Pods-GoChat-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 			);
@@ -240,9 +245,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GoChat/Pods-GoChat-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -259,6 +267,7 @@
 				E13C7EF21F8D36E700C69436 /* LoginViewController.swift in Sources */,
 				E13C7EF41F8D372200C69436 /* ChatViewController.swift in Sources */,
 				E104D6D41F607B3300D64C53 /* AppDelegate.swift in Sources */,
+				E12489971F92260E0064689E /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
